@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Banner from './Banner';
+import Exhibit from './Exhibit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="app">
+      <Banner />
+      {/* The rest of your application content */}
+
+      <Exhibit heading="Sample Exhibit">
+        {/* Place your components or content here */}
+        <p>This is some content within the exhibit.</p>
+        <button>Button</button>
+      </Exhibit>
+      {/* Add more Exhibit components or other content as needed */}
     </div>
   );
 }

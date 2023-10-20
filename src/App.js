@@ -1,24 +1,23 @@
-// import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import Banner from './Banner';
 import Exhibit from './Exhibit';
-import IPComponent from './IPComponent';
+import AddressDisplay from './AddressDisplay';
 
-function App() {
-  return (
-
-    <div className="app">
-      <Banner />
-      {/* The rest of your application content */}
-
-      <Exhibit heading="IP Addresses">
-        {/* Place your components or content here */}
-        <IPComponent ipAddressType="ipv4" />
-        <IPComponent ipAddressType="ipv6" />
-      </Exhibit>
-      {/* Add more Exhibit components or other content as needed */}
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <Banner bannerText="Sextant" />
+                <Exhibit name="Public IPv4 Address">
+                    <AddressDisplay url='https://api.ipify.org?format=json' />
+                </Exhibit>
+                <Exhibit name="Public IPv6 Address">
+                    <AddressDisplay url='https://api64.ipify.org?format=json' />
+                </Exhibit>
+            </div>
+        );
+    }
 }
 
 export default App;
